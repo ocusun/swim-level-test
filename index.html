@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>글로벌 수영 레벨 진단 | 8번 레인의 유령</title>
+  <meta name="description" content="한국·일본·독일·영국 기준과 세계 점수로 내 수영 실력을 측정합니다." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <div class="kicker">8번 레인의 유령 · SELF TEST</div>
+        <h1>나는 전 세계<br>상위 <span>몇 %</span>일까</h1>
+        <p class="sub">기록을 넣으면 한국 능력검정, 일본 영력검정, 독일 배지, 영국 스테이지, 글로벌 7단계와 World Aquatics 점수를 한 번에 대조합니다. 공식 자격 발급이 아니라 자가진단입니다.</p>
+      </div>
+    </header>
+    <div class="grid">
+      <section class="card">
+        <h2>1. 기본 정보</h2>
+        <div class="row3">
+          <div><label>나이</label><input id="age" type="number" min="5" max="99" value="53" /></div>
+          <div>
+            <label>성별</label>
+            <select id="sex">
+              <option value="M">남자</option>
+              <option value="F">여자</option>
+            </select>
+          </div>
+          <div>
+            <label>풀</label>
+            <select id="course">
+              <option value="25">25m</option>
+              <option value="50">50m</option>
+            </select>
+          </div>
+        </div>
+        <p class="hint">타임은 mm:ss 또는 초(예: 1:32.4 / 92.4). 빈 종목은 해당 기준에서 제외합니다.</p>
+        <h2>2. 기록</h2>
+        <div class="row3">
+          <div><label>입영 (초)</label><input id="tread" placeholder="60" /></div>
+          <div><label>잠영 (m)</label><input id="uw" placeholder="10" /></div>
+          <div><label>연속 최장거리 (m)</label><input id="cont" placeholder="400" /></div>
+        </div>
+        <div class="row3">
+          <div><label>자유형 25m</label><input id="fr25" /></div>
+          <div><label>자유형 50m</label><input id="fr50" /></div>
+          <div><label>자유형 100m</label><input id="fr100" /></div>
+        </div>
+        <div class="row3">
+          <div><label>배영 25m</label><input id="bk25" /></div>
+          <div><label>평영 25m</label><input id="br25" /></div>
+          <div><label>평영 50m</label><input id="br50" /></div>
+        </div>
+        <div class="row3">
+          <div><label>접영 25m</label><input id="fl25" /></div>
+          <div><label>IM 100m</label><input id="im100" /></div>
+          <div><label>IM 200m</label><input id="im200" /></div>
+        </div>
+        <div class="row">
+          <div><label>자유형 200m</label><input id="fr200" /></div>
+          <div><label>자유형 500m</label><input id="fr500" /></div>
+        </div>
+        <h2>3. 할 수 있는 기술</h2>
+        <div class="checks">
+          <label class="chk"><input type="checkbox" id="s4" /> 4영법 각 25m 완주</label>
+          <label class="chk"><input type="checkbox" id="sFloat" /> 떠서 이동 50m+</label>
+          <label class="chk"><input type="checkbox" id="sRescue" /> 입영·횡영·트러젠</label>
+          <label class="chk"><input type="checkbox" id="sDive2" /> 2m 잠수 후 물건 건짐</label>
+          <label class="chk"><input type="checkbox" id="sTow" /> 50m 이송(끌기/밀기)</label>
+          <label class="chk"><input type="checkbox" id="sTurn" /> 자세 바꿔 장거리 수영</label>
+        </div>
+        <div class="actions">
+          <button class="primary" id="go">레벨 진단하기</button>
+          <button class="ghost" id="reset">초기화</button>
+        </div>
+        <p class="note">한국 협회 1급은 IM200 3:00, 일본 1급은 연령별 200IM, 독일 골드는 800m/30분+구조 기술입니다.</p>
+      </section>
+      <aside class="card" id="out">
+        <div class="result-empty">왼쪽 기록을 넣고 진단하기를 누르세요.</div>
+      </aside>
+    </div>
+    <footer>
+      참고: 대한수영협회 수영능력검정, 일본수영연맹 영력검정, 독일 DSA, Swim England, MySwimPro, World Aquatics Points = 1000×(베이스/내기록)³.<br />
+      공식 발급이 아닌 자가진단이며, 세계 점수는 근사치입니다.
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
